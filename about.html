@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="styles.css">
+    <title>Ahlussunnahbookstore</title>
+</head>
+<body>
+    <header>
+        <h1>Ahlussunnahbookstore</h1>
+        <button id="toggle-mode">Mode Gelap</button>
+        <nav>
+            <a href="index.html">Home</a>
+            <a href="contact.html">Contact</a>
+            <a href="about.html">About</a>
+        </nav>
+    </header>
+
+    <button class="accordion">Apa itu Ahlussunnahbookstore</button>
+    <div class="panel">
+      Ahlussunnahbookstore adalah toko buku online yang menyediakan buku-buku islami sesuai manhaj salaf.
+    </div>
+
+    <button class="accordion">Bagaimana cara pemesanannya?</button>
+    <div class="panel">
+      Bisa melewati toko online seperti tokopedia, shopee, dll.
+    </div>
+
+    <button class="accordion">Apakah tersedia pengiriman ke seluruh Indonesia?</button>
+    <div class="panel">
+      Na'am, kami melayani pengiriman ke seluruh wilayah Indonesia menggunakan kurir seperti JNE, J&T, dan lainnya.
+    </div>
+
+      <script>
+        var acc = document.getElementsByClassName("accordion");
+var i;
+
+for (i = 0; i < acc.length; i++) {
+  acc[i].addEventListener("click", function() {
+    this.classList.toggle("active");
+    var panel = this.nextElementSibling;
+    if (panel.style.maxHeight) {
+      panel.style.maxHeight = null;
+    } else {
+      panel.style.maxHeight = panel.scrollHeight + "px";
+    }
+  });
+}
+
+
+document.getElementById('toggle-mode').addEventListener('click', function() {
+    document.body.classList.toggle('dark-mode');
+    this.textContent = document.body.classList.contains('dark-mode') ? 'Mode Terang' : 'Mode Gelap';
+});
+
+    </script>
+      
+</body>
+</html>
